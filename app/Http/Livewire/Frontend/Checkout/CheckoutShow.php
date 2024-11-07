@@ -22,8 +22,8 @@ class CheckoutShow extends Component
         return [
             'fullname' => 'required|string|max:121',
             'email' => 'required|email|max:121',
-            'phone' => 'required|string|max:11|min:11',
-            'pincode' => 'required|string|max:4|min:4',
+            'phone' => 'required|string|max:13|min:10',
+            'pincode' => 'required|string|max:6|min:4',
             'address' => 'required|string|max:500'
         ];
     }
@@ -107,20 +107,22 @@ class CheckoutShow extends Component
         }
         return  $this->totalAmount;
     }
-
     public function render()
     {
-        $this->fullname = auth()->user()->name;
-        $this->email = auth()->user()->email;
-
-        $this->phone = auth()->user()->userDetail->phone;
-        $this->pincode = auth()->user()->userDetail->pin_code;
-        $this->address = auth()->user()->userDetail->address;
-
+        $user = auth()->user();
+    
+        $this->fullname = $user->name ?? 'Guest';
+        $this->email = $user->email ?? '';
+    
+        $this->phone = $user->userDetail->phone ?? '';
+        $this->pincode = $user->userDetail->pin_code ?? '';
+        $this->address = $user->userDetail->address ?? '';
+    
         $this->totalAmount = $this->totalAmount();
+        
         return view('livewire.frontend.checkout.checkout-show', [
-
             'totalAmount' => $this->totalAmount
         ]);
     }
+    
 }

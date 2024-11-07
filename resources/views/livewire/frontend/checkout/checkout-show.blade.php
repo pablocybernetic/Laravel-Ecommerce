@@ -10,7 +10,7 @@
                         <div class="shadow bg-white p-3">
                             <h4 class="text-primary">
                                 Item Total Amount :
-                                <span class="float-end">${{ $totalAmount }}</span>
+                                <span class="float-end">Ksh {{ $totalAmount }}</span>
                             </h4>
 
                             <hr>

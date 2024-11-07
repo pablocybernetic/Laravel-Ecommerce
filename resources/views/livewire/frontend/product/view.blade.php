@@ -39,8 +39,8 @@
                             Home / {{ $product->category->name }} / {{ $product->name }}
                         </p>
                         <div>
-                            <span class="selling-price">${{ $product->selling_price }}</span>
-                            <span class="original-price">${{ $product->original_price }}</span>
+                            <span class="selling-price">Ksh {{ $product->selling_price }}</span>
+                            <span class="original-price">Ksh {{ $product->original_price }}</span>
                         </div>
 
                         <div>
@@ -156,8 +156,8 @@
                                         </a>
                                     </h5>
                                     <div>
-                                        <span class="selling-price">${{ $relatedProductItem->selling_price }}</span>
-                                        <span class="original-price">${{ $relatedProductItem->original_price }}</span>
+                                        <span class="selling-price">Ksh {{ $relatedProductItem->selling_price }}</span>
+                                        <span class="original-price">Ksh {{ $relatedProductItem->original_price }}</span>
                                     </div>
                                 </div>
                             </div>

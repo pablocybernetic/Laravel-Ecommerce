@@ -60,7 +60,7 @@
                                             @endif
                                         </div>
                                         <div class="col-md-1 my-auto">
-                                            <label class="price">${{ $cartItem->product->selling_price }} </label>
+                                            <label class="price">Ksh {{ $cartItem->product->selling_price }} </label>
                                         </div>
                                         <div class="col-md-2 col-7 my-auto">
                                             <div class="quantity">
@@ -80,7 +80,7 @@
                                         </div>
                                         <div class="col-md-1 my-auto">
                                             <label class="price">
-                                                ${{ $cartItem->product->selling_price * $cartItem->quantity }}
+                                                Ksh {{ $cartItem->product->selling_price * $cartItem->quantity }}
                                             </label>
                                             @php $totalPrice += $cartItem->product->selling_price * $cartItem->quantity @endphp
                                         </div>
@@ -120,7 +120,7 @@
                 <div class="col-md-4 mt-3">
                     <div class="shadow-sm bg-white p-3">
                         <h4>Total:
-                            <span class="float-end">${{ $totalPrice }}</span>
+                            <span class="float-end">Ksh {{ $totalPrice }}</span>
                         </h4>
                         <hr>
                         <a href="{{ url('/checkout') }}" class="btn btn-warning w-100">Checkout</a>
